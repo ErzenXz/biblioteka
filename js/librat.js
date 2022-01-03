@@ -178,14 +178,14 @@ function promoteBook(name, description, author, image, key) {
     let likes = 0;
     let sender = "Admin";
     let time = t.getDay() + "/" + t.getMonth() + "/" + t.getFullYear();
-    data = { author, description, image, name, likes, sender, time }
-    database.child("promoted/").update(data);
+    data = { author, description, image, likes, name, sender, time }
+    database.child("ads/-MsVkD5VMlCr50aBprPG").update(data);
     Swal.fire({
         position: 'top-end',
         icon: 'success',
         title: "Libri (" + name + ") sapo u promovua!",
         showConfirmButton: false,
-        timer: 1500
+        timer: 7500
     })
 }
 

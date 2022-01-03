@@ -18,3 +18,16 @@ query.on("child_added", function (snapshot) {
     document.getElementById("card-title").innerText = bname;
     document.getElementById("card-text").innerText = bdesc;
 });
+
+query.on("child_changed", function (snapshot) {
+    // Get the messages
+    let bname = snapshot.val().name;
+    let bdesc = snapshot.val().desc;
+    let bauthor = snapshot.val().author;
+    let bimage = snapshot.val().image;
+    let postKey = snapshot.key;
+
+    document.getElementById("imgA").src = bimage;
+    document.getElementById("card-title").innerText = bname;
+    document.getElementById("card-text").innerText = bdesc;
+});

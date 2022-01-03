@@ -75,9 +75,12 @@ function createBook(name, description, author, image, key) {
 
     let h5 = document.createElement("h5");
     let h5Class = document.createAttribute("class");
+    let h5Title = document.createAttribute("title");
     h5Class.value = "card-title";
+    h5Title.value = name;
     h5.innerText = name;
     h5.setAttributeNode(h5Class);
+    h5.setAttributeNode(h5Title);
 
     let p1 = document.createElement("p");
     let p1Class = document.createAttribute("class");

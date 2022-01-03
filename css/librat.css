@@ -82,12 +82,22 @@ li a:hover:not(.active) {
 }
 
 .minimize {
-    max-height: 100px;
     min-height: 100px;
     height: 100px;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+}
+
+.card-title {
+    height: 27px;
+    max-height: 27px;
     overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
 }
 
 a {

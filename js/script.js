@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged(function (e) { e ? (email = e.email, uid = e.
 query.on("child_added", function (snapshot) {
     // Get the messages
     let bname = snapshot.val().name;
-    let bdesc = snapshot.val().desc;
+    let bdesc = snapshot.val().description;
     let bauthor = snapshot.val().author;
     let bimage = snapshot.val().image;
     let postKey = snapshot.key;
@@ -22,7 +22,7 @@ query.on("child_added", function (snapshot) {
 query.on("child_changed", function (snapshot) {
     // Get the messages
     let bname = snapshot.val().name;
-    let bdesc = snapshot.val().desc;
+    let bdesc = snapshot.val().description;
     let bauthor = snapshot.val().author;
     let bimage = snapshot.val().image;
     let postKey = snapshot.key;

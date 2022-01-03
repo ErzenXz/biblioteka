@@ -130,8 +130,40 @@ li a:hover:not(.active) {
 .card {
     width: 50%;
     margin: auto;
+    padding: 10px;
+    max-height: 500px;
+}
+
+.card-body {
+    height: 250px;
+    max-height: 250px;
+}
+
+.minimize {
+    min-height: 100px;
+    height: 100px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.card-title {
+    height: 27px;
+    max-height: 27px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}
+
+a {
+    margin: auto;
+
 }
 
 .card-img-top {
-    max-width: 300px;
+    height: 300px;
+    max-height: 300px;
 }

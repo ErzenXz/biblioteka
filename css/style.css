@@ -131,7 +131,7 @@ li a:hover:not(.active) {
     width: 50%;
     margin: auto;
     padding: 10px;
-    max-height: 500px;
+    max-height: 535px;
 }
 
 .card-body {

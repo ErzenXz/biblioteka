@@ -1,6 +1,5 @@
 // Programoi Erzen Krasniqi
 
-// Librat dhe te dhënat e tyre Ardonis Byqmeti
 
 let log = console.log;
 

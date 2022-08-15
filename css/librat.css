@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 55px;
+}
+
+header .blur {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(3px);
+    user-select: none;
+    border-bottom: 0.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    z-index: 100;
+}
+
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header .list-left {
+    float: left;
+}
+
+header .list-right {
+    float: right;
+    cursor: pointer;
+}
+
+
+header li a {
+    display: block;
+    font-weight: grey;
+    color: rgb(39, 38, 38);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+header li a:hover:not(.active) {
+    background-color: #F2F2F2;
+    color: black;
+}
+
+header .active {
+    background-color: #297e97;
+    color: whitesmoke;
+    transition: all 0.3s ease-in-out;
+}
+
+header .active:hover {
+    background-color: rgba(41, 125, 151, 0.80);
+    color: whitesmoke;
+}
+
+
+.card {
+    padding: 10px;
+    margin: 10px;
+    max-height: 550px;
+}
+
+.card-body {
+    height: 250px;
+    max-height: 250px;
+}
+
+.minimize {
+    min-height: 100px;
+    height: 100px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-title {
+    height: 27px;
+    max-height: 27px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}
+
+a {
+    margin: auto;
+
+}
+
+.imageA {
+    height: 300px;
+    max-height: 300px;
+}
+
+.search {
+    margin-top: 10vh;
+    padding: 10px;
+    width: 50vw;
+    margin-left: 18vw;
+}
+
+.deleteB {
+    margin-left: 4px;
+}
+
+.textNav {
+    padding-left: 5px;
+}
+
+#searchRes > li {
+    font-size: 18px;
+    margin-top: 10px;
+    border: 2.5px solid rgb(228, 223, 223);
+    border-radius: 5px;
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+    text-emphasis: none;
+    list-style: none;
+    padding: 10px;
+    width: 80vw;
+    transition: all 0.3s ease-in-out;
+}
+
+#searchRes > li:hover {
+    background-color: rgb(228, 223, 223);
+    cursor: pointer;
+}
+
+.loadMore {
+    width: 10vw;
+    margin-left: 38vw;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0ms;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+}
+ 
+.loadMore:hover {
+    background-color: rgba(240, 128, 128, 0.77);
+    box-shadow: 0px 0px 20px -18px;
+}
+.loadMore:active {
+    transform: scale(0.95);
+}
+
+li a:active {
+    transform: scale(0.95);
+}
+
+
+#myProducts {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  
+#myProducts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  width: 80vw;
+  margin: auto;
+}
+
+#myProducts > .cardD {
+  min-width: 200px;
+  min-height: 150px;
+  width: 300px;
+  max-width: 300px;
+  margin: 20px;
+  margin-right: 10vw;
+  transition: all 0.15s ease-in-out 0ms;
+}
+
+}
+
+/* 
+.newBox {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 20vw;
+    min-width: 300px;
+    height: 500px;
+    min-height: fit-content;
+    max-height: 500px;
+    padding: 0;
+}
+
+.image > img {
+    width: 100%;
+    height: 350px;
+    max-height: 350px;
+    padding: 10px;
+}
+
+.text h5 {
+    height: 35px;
+    max-height: 35px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text p {
+    min-height: 100px;
+    height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ */
+
+.author {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

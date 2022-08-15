@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="afnp5JSU5uZ1yhREveAAYYv_P698dx_QCYFm80jNhdQ" />
+    <title>Home • Biblioteka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-app.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-database.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-analytics.min.js"></script>
+    <script defer src="https://kit.fontawesome.com/f45cd9c28c.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn-erzen.netlify.app/js/alert.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/logout.js"></script>
+</head>
+
+<body>
+    <header>
+        <ul class="blur" id="blur">
+
+            <li class="list-left"><a href="./index.html" class="active fas fa-home" title="Home">
+                    <span class="textNav">Home</span>
+                </a></li>
+            <li class="list-left"><a href="librat.html" class="fa fa-book" title="Books">
+                    <span class="textNav">Books</span>
+                </a></li>
+            <li class="list-left"><a href="https://erzenchat.netlify.app/" class="fas fa-envelope" title="Messeges">
+                    <span class="textNav">Chat</span>
+                </a></li>
+            <li class="list-right" id="logout-id"><a onclick="logout()" class="fas fa-sign-out-alt" title="Log out">
+                    <span>Log out</span>
+                </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <div class="row">
+        <div class="col">
+            <div class="leftbox">
+                <h1 id="bigtext">Biblioteka e qytetit të Lipjanit.</h1>
+                <a id="linkbook" href="librat.html">Shiko librat</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="second">
+
+        <div class="box1">
+            <h1>Libri i promovuar</h1>
+        </div>
+
+        <div class="box1">
+            <div class="card" style="width: 18rem;">
+                <img id="imgA" src="https://c.tenor.com/XK37GfbV0g8AAAAi/loading-cargando.gif" id="imgA"
+                    class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="card-title">Loading</h5>
+                    <p class="card-text minimize" id="card-text">Loading</p>
+                    <button class="btn btn-primary" id="card-button">Shiko</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="third">
+        <div class="box1 b1">
+            <h1>Kontriboni për bibliotekën</h1>
+        </div>
+        <div class="box1">
+            <label for="name">Emri i kontribuesit</label><br>
+            <input type="text" name="name" id="name" placeholder="Emri juaj..." class="input"><br>
+
+            <label for="email">Email i kontribuesit</label><br>
+            <input type="email" name="email" id="email" placeholder="Emaili juaj..." class="input"><br>
+
+            <label for="book_name">Emri i librit</label><br>
+            <input type="text" name="book_name" id="book_name" placeholder="Emri i librit..." class="input"><br>
+
+            <label for="book_author">Autori i librit</label><br>
+            <input type="text" name="book_author" id="book_author" placeholder="Autori..." class="input"><br>
+
+            <label for="book_description">Përshkrimi i librit</label><br>
+            <input type="text" name="book_description" id="book_description" placeholder="Përshkrimi i librit..."
+                class="input"><br>
+
+            <label for="book_image_url">Imazhi i librit</label><br>
+            <input type="url" name="book_image_url" id="book_image_url" placeholder="Linku i imazhit..."
+                class="input"><br>
+
+            <button onclick="addBook()" class="addBookButton">Shtoni librin</button>
+        </div>
+    </div>
+
+    <div class="author">
+        <pre onclick="showVersion()">ErzenK     All rights reserved      2022©</pre>
+    </div>
+
+
+    <script>
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC3tO9I7UGyZ0ZIDFM7qP4XcHvinjg8TYI",
+            authDomain: "bibloteka-c28cd.firebaseapp.com",
+            databaseURL: "https://bibloteka-c28cd-default-rtdb.firebaseio.com/",
+            projectId: "bibloteka-c28cd",
+            storageBucket: "bibloteka-c28cd.appspot.com",
+            messagingSenderId: "438048147632",
+            appId: "1:438048147632:web:c03f39afbbfcd81dd1d375",
+            measurementId: "G-E0K8N7H9QL"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

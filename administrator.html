@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librat • Bibloteka</title>
+    <link href="https://cdn-erzen.netlify.app/fonts/Nunito.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-app.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-database.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-analytics.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <ul class="blur" id="blur">
+
+            <li class="list-left"><a href="./index.html" class="fas fa-home" title="Home">
+                    <span class="textNav">Home</span>
+                </a></li>
+            <li class="list-left"><a href="librat.html" class="fa fa-book" title="Books">
+                    <span class="textNav">Books</span>
+                </a></li>
+            <li class="list-left"><a href="https://erzenchat.netlify.app/" class="fas fa-envelope" title="Messeges">
+                    <span class="textNav">Chat</span>
+                </a></li>
+            <li class="list-right" id="logout-id"><a onclick="logout()" class="fas fa-sign-out-alt" title="Log out">
+                    <span>Log out</span>
+                </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <div class="page" id="page">
+
+        <div class="container">
+            <div class="row">
+                <div class="col leftbox">
+                    <h1>Shtoni një libër</h1><br>
+                    <input type="text" name="bookname" placeholder="Emri i librit" id="bookname"><br>
+                    <input type="text" name="bookdesc" placeholder="Përshkrimi i librit" id="bookdesc"><br>
+                    <input type="text" name="bookauthor" placeholder="Autori i librit" id="bookauthor"><br>
+                    <input type="text" name="bookimage" placeholder="Linku i fotos" id="bookimage"><br>
+                    <input type="button" name="addbook" value="Shtoni librin" id="addbook" onclick="addBook()">
+                </div>
+                <div class="col rightbox">
+                    <!--
+                <h1>Hiqni një libër</h1><br>
+                <input type="text" name="bookpath" placeholder="Adresa e librit" id="bookpath"><br>
+
+                <input type="button" name="removebook" value="Fshini librin" id="removebook" onclick="removeBook()">
+                -->
+                    <h1>Menagjeri i faqes</h1><br>
+                    <input type="button" name="changepassword" value="Ndryshoni passwordin" id="changepassword"
+                        onclick="changePassword()"><br>
+                    <input type="button" name="pagestats" value="Statistikat e faqes" id="pagestats"
+                        onclick="pageStats()"><br>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <br><br><br><br>
+
+        <h1 class="approve">Aprovimi i librave</h1><br>
+
+        <div class="verifyBooks">
+            <ul id="ul">
+
+            </ul>
+        </div>
+
+    </div>
+    <br><br>
+    <div class="details hidden" id="details">
+        <div class="nav1">
+            <p id="name"></p>
+            <p id="email"></p>
+            <p id="close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></p>
+        </div>
+        <div class="time">
+            <p id="ms"></p>
+            <p id="time"></p>
+        </div>
+        <div class="book">
+            <div>
+                <div class="first">
+                    <p id="bookName"></p>
+                    <p id="bookAuthor"></p>
+                </div>
+
+                <p id="bookDesc"></p>
+                <p id="bookKey"></p>
+            </div>
+            <div>
+                <p id="bookImage"></p>
+            </div>
+            <div class="buttons">
+                <button id="but1" class="buttonA">Approve</button>
+                <button id="but2" class="buttonD">Deny</button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC3tO9I7UGyZ0ZIDFM7qP4XcHvinjg8TYI",
+            authDomain: "bibloteka-c28cd.firebaseapp.com",
+            databaseURL: "https://bibloteka-c28cd-default-rtdb.firebaseio.com/",
+            projectId: "bibloteka-c28cd",
+            storageBucket: "bibloteka-c28cd.appspot.com",
+            messagingSenderId: "438048147632",
+            appId: "1:438048147632:web:c03f39afbbfcd81dd1d375",
+            measurementId: "G-E0K8N7H9QL"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+    <script defer src="js/admin.js"></script>
+    <script src="https://cdn-erzen.netlify.app/js/jquery.js"></script>
+    <script defer src="https://cdn-erzen.netlify.app/js/alert.js"></script>
+    <script src="https://kit.fontawesome.com/f45cd9c28c.js" crossorigin="anonymous"></script>
+    <script defer src="js/logout.js"></script>
+
+</body>
+
+</html>
